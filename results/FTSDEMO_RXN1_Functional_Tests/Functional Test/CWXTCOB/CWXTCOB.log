@@ -1,0 +1,68 @@
+16:41:37.615 COMMENT   Engine           Test Scenario execution started
+16:41:37.615 INFO      Engine           Using context settings:
+  Engine Version       : 4.0.0
+  Environment id                : 5b508b8a787be73b59238d38
+  Environment type              : Batch
+  Operating system              : ZOS
+  zOS agent version             : NEWEST
+  Server address                : CWCC.COMPUWARE.COM
+  Server port                   : 16196
+  Job execution timeout seconds : 600
+  Job info interval seconds     : 3
+  Socket read timeout           : 30
+  Encoding                      : ISO8859-1
+  Codepage                      : IBM-1047
+  Host user Id                  : HDDRXM0
+16:41:37.615 INFO      Engine           Setting variables from context and context data extensions
+16:41:37.615 INFO      Engine             id: environmentId      value: 5b508b8a787be73b59238d38
+16:41:37.615 INFO      Engine             id: environmentType    value: BATCH
+16:41:37.615 INFO      Engine             id: userId             value: HDDRXM0
+16:41:37.615 INFO      Variable         Interpreting Variable id:infile
+16:41:37.615 LOG       Variable         Resolved data:
+HDDRXM0.DEMO.CWXTDATA
+16:41:37.615 INFO      Variable         Interpreting Variable id:outfile
+16:41:37.615 LOG       Variable         Resolved data:
+HDDRXM0.DEMO.CWXTRPT
+16:41:37.615 INFO      Variable         Interpreting Variable id:expected
+16:41:37.615 LOG       Variable         Resolved data:
+HDDRXM0.DEMO.CWXTRPT.EXPECT
+16:41:37.615 INFO      Component        Interpreting Component: CWXTCOB program:CWXTCOB
+16:41:37.615 INFO      Component        Using setup JCL for execution
+16:41:37.615 INFO      Component          Variable substitution found in setup JCL, now substituted
+16:41:37.615 INFO      Component          JCL for setup:
+//EMPFILE  DD  DISP=SHR,DSN=HDDRXM0.DEMO.CWXTDATA
+//RPTFILE  DD  DISP=SHR,DSN=HDDRXM0.DEMO.CWXTRPT
+//SYSUDUMP DD  SYSOUT=*
+//SYSOUT   DD  SYSOUT=*
+16:41:37.677 LOG       CWCC Batch       Final JCL setup for the component:
+//EMPFILE  DD  DISP=SHR,DSN=HDDRXM0.DEMO.CWXTDATA
+//RPTFILE  DD  DISP=SHR,DSN=HDDRXM0.DEMO.CWXTRPT
+//SYSUDUMP DD  SYSOUT=*
+//SYSOUT   DD  SYSOUT=*
+//EMPFILE  DD DISP=SHR,DSN=HDDRXM0.DEMO.CWXTDATA
+//RPTFILE  DD DISP=SHR,DSN=HDDRXM0.DEMO.CWXTRPT
+
+16:41:37.677 LOG       CWCC Batch       Component Runtime Settings:
+16:41:37.677 LOG       CWCC Batch         Load library              :HDDRXM0.DEMO.LOAD.PDSE
+16:41:37.677 LOG       CWCC Batch         Additional load libraries :
+16:41:37.677 LOG       CWCC Batch         Listing libraries         :
+16:41:37.677 LOG       CWCC Batch         SysDebug libraries        :
+16:41:37.677 LOG       CWCC Batch         DB2 Subsystem ID          :
+16:41:37.677 LOG       CWCC Batch         DB2 plan                  :
+16:41:37.677 LOG       CWCC Batch         Call interface            :NONE
+16:41:37.677 LOG       CWCC Batch         Debugger type             :NONE
+16:41:37.677 LOG       CWCC Batch         Component type            :COBOL
+16:41:37.693 INFO      CWCC Batch       Sending Module execution request to Host for module:CWXTCOB rollback:false
+16:41:39.505 LOG       CWCC Batch       Uploading input data for module CWXTCOB
+16:41:40.208 LOG       CWCC Batch       Request to host: <?xml version="1.0" encoding="UTF-8"?><XATZREQ><xatz_request><userid>HDDRXM0</userid><xpassword>XXX</xpassword><operation>EXECUTE</operation><runat>DAY</runat><loglevel>log</loglevel><inputfilepath>XAT_Module.i.xml</inputfilepath><outputfilepath>XAT_Module.o.xml</outputfilepath><runtime>BATCH</runtime><callinterface /><applid /><db2plan /><db2id /><rollback>false</rollback><jobdirectory>e20ac000-1a98-4b82-8e84-394f8c9e4085</jobdirectory><amode24>false</amode24><members><membername>CWXTCOB</membername></members><loads><mainload>HDDRXM0.DEMO.LOAD.PDSE</mainload></loads><codepage>1047</codepage><lang>COBOL</lang><refs><ref>//EMPFILE  DD  DISP=SHR,DSN=HDDRXM0.DEMO.CWXTDATA</ref><ref>//RPTFILE  DD  DISP=SHR,DSN=HDDRXM0.DEMO.CWXTRPT</ref><ref>//SYSUDUMP DD  SYSOUT=*</ref><ref>//SYSOUT   DD  SYSOUT=*</ref><ref>//EMPFILE  DD DISP=SHR,DSN=HDDRXM0.DEMO.CWXTDATA</ref><ref>//RPTFILE  DD DISP=SHR,DSN=HDDRXM0.DEMO.CWXTRPT</ref></refs></xatz_request></XATZREQ>
+16:41:40.521 LOG       CWCC Batch       Response from host: <?xml version="1.0" encoding="UTF-8"?><XATZRESP xmlns:xsi="http://www.w3.ORG/2001/XMLSCHEMA-INSTANCE"><xatz_response><resultcode>0</resultcode><resultmessage></resultmessage><jobid>J0705877</jobid></xatz_response></XATZRESP>
+16:41:40.521 LOG       CWCC Batch       Response received from Host. Message: JobId:J0705877
+16:41:40.521 INFO      CWCC Batch       Job has been started at host with JobId:J0705877
+16:41:40.521 INFO      CWCC Batch       Waiting for Execution Result from Host
+16:41:44.682 INFO      CWCC Batch       Component completed with program exit: +0
+16:41:45.245 LOG       CWCC Batch       Setting execution variable 'jobid' to J0705877
+16:41:45.245 LOG       CWCC Batch       Setting execution variable 'programexit' to 0
+16:41:46.885 INFO      Component        Verifying program exit code: 0 against verify expression: value < 8
+16:41:47.432 INFO      Component        Program exit code was verified to be accepted by the expression: value < 8
+16:41:47.432 INFO      Component        Finished interpreting Component: CWXTCOB program:CWXTCOB
+16:41:47.432 COMMENT   Engine           Test Scenario execution ended
