@@ -1,0 +1,48 @@
+14:30:39.578 COMMENT   Engine           Test Scenario execution started
+14:30:39.578 INFO      Engine           Using context settings:
+  Engine Version       : 19.4.1
+  Environment id                : 5b5f2a71787be73b59238d7b
+  Environment type              : Cics
+  Operating system              : ZOS
+  zOS agent version             : NEWEST
+  Server address                : CWCC.COMPUWARE.COM
+  Server port                   : 16196
+  Job execution timeout seconds : 600
+  Job info interval seconds     : 3
+  Socket read timeout           : 30
+  Encoding                      : ISO8859-1
+  Codepage                      : IBM-1047
+  Host user Id                  : HDDRXM0
+14:30:39.578 INFO      Engine           Setting variables from context and context data extensions
+14:30:39.578 INFO      Engine             id: environmentId      value: 5b5f2a71787be73b59238d7b
+14:30:39.578 INFO      Engine             id: environmentType    value: CICS
+14:30:39.578 INFO      Engine             id: userId             value: HDDRXM0
+14:30:39.578 INFO      SQLUpdate        Interpreting SQL Updating statement
+14:30:39.578 INFO      SQLUpdate        Using database from Environment:DBCCCWCC
+14:30:39.578 LOG       SQLUpdate        SQL statement: 
+delete from ADKKXC0.XAEMPLOYEE where RIDENT=123;
+14:30:39.578 LOG       SQLUpdate        Establishing connection to database DBCCCWCC
+14:30:39.593 ERROR     SQLUpdate        Unable to get a database connection. com.ibm.db2.jcc.DB2Driver
+14:30:39.593 ERROR     Engine           Unable to get a database connection. com.ibm.db2.jcc.DB2Driver
+14:30:39.593 ERROR     Engine           An error occured. Now stopping the execution.
+14:30:39.593 INFO      Engine           Verbose Exstreme logging is turned on. The stacktrace below does not mean that an error occured in the Java engine, but can be useful for debugging
+14:30:39.593 COMMENT   Engine           Stacktrace:com.compuware.xatester.xaunit.exceptions.ExecutionStoppedException: Unable to get a database connection. com.ibm.db2.jcc.DB2Driver
+	at com.compuware.xatester.xaunit.extensions.SQLUpdateComponent.interprete(SQLUpdateComponent.java:181)
+	at com.compuware.xatester.xaunit.execution.XaUnitInterpreter.interpretChildComponents(XaUnitInterpreter.java:89)
+	at com.compuware.xatester.xaunit.execution.XaUnitInterpreter.interpret(XaUnitInterpreter.java:213)
+	at com.compuware.xatester.ui.execution.XaUnitExecutor.execute(XaUnitExecutor.java:184)
+	at com.compuware.xatester.ui.execution.XaUnitExecutor.access$0(XaUnitExecutor.java:180)
+	at com.compuware.xatester.ui.execution.XaUnitExecutor$XaUnitExecutorJob.run(XaUnitExecutor.java:292)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.ClassNotFoundException: com.ibm.db2.jcc.DB2Driver
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:814)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at com.compuware.xatester.ui.license.ConfigEnvironment.getDatabaseConnection(ConfigEnvironment.java:145)
+	at com.compuware.xatester.xaunit.extensions.SQLUpdateComponent.interprete(SQLUpdateComponent.java:177)
+	... 6 more
+
+14:30:39.593 COMMENT   Engine           Test Scenario execution ended
